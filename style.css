@@ -1,0 +1,292 @@
+*,
+*::before,
+*::after {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --links-color: #4c5fd5;
+}
+
+body{
+    background-color: white;
+    position: relative;
+}
+
+/* Estilos del Header */
+
+header {
+    z-index: 200;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    top: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+/* Menu de Navegacion */
+
+nav {
+    max-width: 1600px;
+    width: 100%;
+    padding: 20px 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos del Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo_icon {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.logo_text {
+    font-size: 24px;
+}
+
+/* Estilos de los Botones  */
+
+.buttons_container {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons_container>* {
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.buttons_container .submit_request_button {
+    background-color: black;
+}
+
+.buttons_container .sign_in_button {
+    background-color: var(--links-color);
+    border: none;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.buttons_container .sign_in_button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* Estilos de la Seccion de Busqueda */
+
+.search_section {
+    background-color: #dadbf1;
+    padding-top: 5em;
+}
+
+.search_section_container{
+    max-width: 1600px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    padding: 6em 0;
+    flex-direction: column;
+}
+
+/* Estilos Titulo Busqueda */
+
+.search_title{
+    text-align: center;
+    font-weight: normal;
+    font-size: 4.5em;
+    margin-bottom: 30px;
+}
+
+/* Estilos Barra de Busqueda */
+
+.search_bar {
+    margin: auto;
+    max-width: 720px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.search_bar:hover {
+    border-color: #4c5fd5;
+}
+
+.search_input {
+    flex: 1;
+    padding: 20px 10px;
+    border: none;
+    font-size: 20px;
+}
+
+.search_input:focus {
+    outline: none;
+    border-color: #4c5fd5;
+    
+}
+
+.search_icon {
+    fill: #000;
+    width: 20px;
+    height: 20px;
+    right: 25px;
+    position: absolute;
+    transition: 0.2s;
+}
+
+.search_icon:hover {
+    fill: #4c5fd5;
+}
+
+/* Estilos Seccion Categoria */
+
+.category_section{
+    max-width: 100vw;
+    background-color: white;
+    max-width: 1000px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
+    margin: auto;
+    padding: 200px 0;
+}
+
+.category_list_item{
+    display: flex;
+    gap: 20px;
+    border-radius: 25px;
+}
+
+.category_list_item img{
+    max-height: 100px;
+    align-self: center;
+}
+
+.category_list_item:nth-child(2n) img{
+    order: 1;
+}
+
+.category_list_item .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.category_list_item .text h4{
+    font-size: 1.7em;
+}
+
+.category_list_item .text p{
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.category_list_item .text a{
+    font-size: 1.5em;
+    text-decoration: none;
+    color: var(--links-color);
+}
+
+/* Estilos del Pie de Pagina */
+
+footer{
+    background-color: black;
+    max-width: 100vw;
+}
+
+.footer_links_container{
+    background-color: black;
+    margin: auto;
+    max-width: 1000px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(150px, 1fr));
+    color: white;
+    justify-content: space-between;
+    padding: 3em 0;
+    gap: 40px;
+}
+
+.footer_list_item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer_list_item a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Boton que va en absolute en la pagina que sirve para inciar un chat con un bot */
+
+.help_button{
+    padding: 10px 40px;
+    background-color: var(--links-color);
+    color: white;
+    border-radius: 25px;
+    font-size: 24px;
+    border: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    display: flex; 
+    gap: 10px;
+    fill: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.help_button_icon{width: 30px;}
+
+@media screen and (max-width: 768px){
+    nav{
+        justify-content: center;
+    }
+    
+    .buttons_container{
+        display: none;
+    }
+    
+    .search_title{
+        font-size: 3em;
+    }
+
+    .search_bar{
+        width: 85%;
+    }
+    
+    .category_section{
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 6em 2em;
+    }
+
+    .category_list_item img{
+        order: 1;
+    }
+}
